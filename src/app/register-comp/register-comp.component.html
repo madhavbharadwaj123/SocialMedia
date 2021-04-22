@@ -1,0 +1,42 @@
+<form [formGroup]='registerForm'>
+  <div>
+    <div class="mb-3 small-padding">
+        <label class="blue-text">User name</label>
+        <input type="text" formControlName='username'  required  class="form-control" />
+      </div>
+  </div>
+  <div>
+    <div *ngIf="registerForm.get('username').hasError('required') && registerForm.get('username').touched" class="mb-3 small-padding">
+        <label class="red-text">Enter a username without spaces</label>
+    </div>
+  </div>
+  <div>
+    <div *ngIf="registerForm.get('username').hasError('cannotContainSpace')" class="mb-3 small-padding">
+        <label class="red-text">Enter a username without spaces</label>
+    </div>
+  </div>
+
+  <div>
+    <div class="mb-3 small-padding">
+        <label  class="blue-text">Password</label>
+        <input type="password"  formControlName="password" class="form-control" />
+    </div>
+  </div>
+  <div>
+    <div class="mb-3 small-padding">
+        <label  class="blue-text">Confirm password</label>
+        <input type="password"  formControlName="confirmPassword" class="form-control" />
+    </div>
+  </div>
+  <div>
+    <div *ngIf="registerForm.get('confirmPassword').hasError('isMatching')"   class="mb-3 small-padding">
+        <label  class="red-text">password and confirm password don't match</label>
+    </div>
+  </div>
+
+  <div>
+      <div class="input-container">
+        <button type="submit"  (click)="register()" class="login-button">Register</button>
+      </div>
+  </div>
+  </form>

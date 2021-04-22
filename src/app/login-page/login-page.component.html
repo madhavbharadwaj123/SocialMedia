@@ -1,0 +1,20 @@
+
+<div class="full-page-div" #Register>
+    <div class="login-form">
+        <div class="login-container logo-font">
+                "Milan"
+        </div>
+        <div class="login-container">
+            <div class="login-form-item"><button type="button" class="btn btn-outline-primary" (click)="handleLoginClick()">Login</button></div>
+            <div class="login-form-item"><button type="button" class="btn btn-outline-primary" (click)="handleRegisterClick()">Sign up</button></div>
+        </div>
+        <div *ngIf="this.accountService.registerStatus;then login;else register"></div>
+        <ng-template #login>
+            <app-login-comp> </app-login-comp>
+        </ng-template>
+        <ng-template #register>
+            <app-register-comp></app-register-comp>
+        </ng-template>
+</div>
+
+

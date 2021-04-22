@@ -1,0 +1,18 @@
+
+.logo-font{
+  font-size: 24px;
+  font-family: 'Pacifico', cursive;
+}
+
+
+.navbar-background{
+  background: linear-gradient(to right, #002984 , #757de8);
+}
+
+.search {
+  margin-left: auto;
+}
+
+.white-text{
+  color: white
+}
